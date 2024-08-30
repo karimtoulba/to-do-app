@@ -1,5 +1,6 @@
 document.querySelector("#to-do-form").addEventListener("submit", handleSubmit);
 
+// Adding new task
 async function handleSubmit(event) {
   event.preventDefault();
 
@@ -23,3 +24,14 @@ async function handleSubmit(event) {
     taskField.focus();
   }
 }
+
+// List all tasks in the database
+async function listTasks() {
+  let tasksLink = await fetch("/.netlify/functions/tasks");
+  let tasksJson = await tasksLink.json();
+  console.log(tasksJson.tasks);
+
+  // Client Side Rendering
+}
+
+listTasks();
