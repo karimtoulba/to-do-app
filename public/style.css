@@ -12,7 +12,7 @@
   }
 }
 
-#loading-single-span {
+#loading-single-span-one {
   width: 25%;
   height: 20px;
   background: grey;
@@ -21,7 +21,20 @@
   animation: 0.4s flashingLoad ease-in-out infinite;
 }
 
-.item-text .one {
-  width: 25% !important;
+#loading-single-span-two {
+  width: 30%;
   height: 20px;
+  background: grey;
+  opacity: 30%;
+  border-radius: 5px;
+  animation: 0.4s flashingLoad ease-in-out infinite;
+}
+
+#loading-single-span-three {
+  width: 15%;
+  height: 20px;
+  background: grey;
+  opacity: 30%;
+  border-radius: 5px;
+  animation: 0.4s flashingLoad ease-in-out infinite;
 }
