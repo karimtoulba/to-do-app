@@ -23,15 +23,29 @@ async function handleSubmit(event) {
     alert("Task field is blank. Please enter text.");
     taskField.focus();
   }
+  listTasks();
 }
 
 // List all tasks in the database
 async function listTasks() {
   let tasksLink = await fetch("/.netlify/functions/tasks");
   let tasksJson = await tasksLink.json();
-  console.log(tasksJson.tasks);
+
+  // Server Side Rendering
+  // document.querySelector("#list-tasks").innerHTML = tasksJson.tasks;
 
   // Client Side Rendering
+  const template = document.querySelector("#single-task-template");
+  const wrapper = document.createDocumentFragment();
+
+  tasksJson.tasks.forEach((task) => {
+    const clone = template.content.cloneNode(true);
+    clone.querySelector("#task-entry").textContent = task.text;
+    wrapper.appendChild(clone);
+  });
+
+  document.querySelector("#list-tasks").textContent = "";
+  document.querySelector("#list-tasks").appendChild(wrapper);
 }
 
 listTasks();

@@ -1,0 +1,27 @@
+#loading-single {
+  background: #f1f1f1;
+  margin-bottom: 10px;
+}
+
+@keyframes flashingLoad {
+  0% {
+    opacity: 0.1;
+  }
+  45% {
+    opacity: 0.45;
+  }
+}
+
+#loading-single-span {
+  width: 25%;
+  height: 20px;
+  background: grey;
+  opacity: 30%;
+  border-radius: 5px;
+  animation: 0.4s flashingLoad ease-in-out infinite;
+}
+
+.item-text .one {
+  width: 25% !important;
+  height: 20px;
+}
